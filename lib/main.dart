@@ -3,11 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:metabank/core/constants/colors.dart';
 import 'package:metabank/core/utils/routes.dart';
 import 'package:metabank/features/authentication/presentation/pages/splashscreen/splash_screen.dart';
-import 'package:metabank/injection_container.dart';
+import 'package:metabank/injection_container.dart' as dl;
+import 'injection_container.dart';
 
 import 'package:metabank/features/authentication/presentation/bloc/authentication_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dl.init();
   runApp(const MyApp());
 }
 
@@ -35,6 +38,7 @@ class MyApp extends StatelessWidget {
   Map<String, WidgetBuilder> _createRoutes() {
     return {
       AppRoutes.splashScreen: (context) => const SplashScreen(),
+      AppRoutes.signIn: (context) => const SplashScreen(),
     };
   }
 }
