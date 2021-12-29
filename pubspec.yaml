@@ -32,7 +32,7 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.0
+  flutter_bloc: ^7.0.0
   flutter_svg: ^1.0.0
   get_it: ^7.2.0
   shared_preferences: ^2.0.11
@@ -82,6 +82,8 @@ flutter:
           weight: 500
         - asset: assets/fonts/gilroy/Gilroy-Regular.ttf
           weight: 400
+        - asset: assets/fonts/gilroy/Gilroy-Light.ttf
+          weight: 300
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

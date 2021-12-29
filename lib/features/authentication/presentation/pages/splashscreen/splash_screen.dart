@@ -28,10 +28,12 @@ class _SplashScreenState extends State<SplashScreen> {
       body: SafeArea(
         child: BlocConsumer<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
-            if (state is AppStartedEvent) {
+            if (state is AuthenticationStartedEvent) {
               Navigator.popAndPushNamed(context, AppRoutes.signIn);
             }
           },
+          buildWhen: (previous, current) =>
+              current is! AuthenticationStartedEvent,
           builder: (context, state) {
             if (state is UnauthenticatedState) {
               return Column(
@@ -48,10 +50,11 @@ class _SplashScreenState extends State<SplashScreen> {
                   ).space(bottom: 50),
                 ],
               );
+            } else {
+              return const Center(
+                child: LogoRow(),
+              );
             }
-            return const Center(
-              child: LogoRow(),
-            );
           },
         ).space(
           left: 20,

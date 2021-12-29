@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:metabank/core/constants/colors.dart';
 import 'package:metabank/core/utils/routes.dart';
+import 'package:metabank/features/authentication/presentation/pages/create_account/sign_up_screen.dart';
+import 'package:metabank/features/authentication/presentation/pages/signin_screen/signin_screen.dart';
 import 'package:metabank/features/authentication/presentation/pages/splashscreen/splash_screen.dart';
 import 'package:metabank/injection_container.dart' as dl;
 import 'injection_container.dart';
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
           primaryColor: AppColors.primaryColor,
           scaffoldBackgroundColor: AppColors.primaryDarkColor,
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          fontFamily: 'Gilroy',
         ),
         routes: _createRoutes(),
         debugShowCheckedModeBanner: false,
@@ -38,7 +41,8 @@ class MyApp extends StatelessWidget {
   Map<String, WidgetBuilder> _createRoutes() {
     return {
       AppRoutes.splashScreen: (context) => const SplashScreen(),
-      AppRoutes.signIn: (context) => const SplashScreen(),
+      AppRoutes.signIn: (context) => const SignInScreen(),
+      AppRoutes.signUp : (context)=> const SignUpSceen(),
     };
   }
 }

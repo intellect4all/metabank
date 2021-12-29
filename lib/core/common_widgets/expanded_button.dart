@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metabank/core/config/app_config.dart';
 import 'package:metabank/core/constants/colors.dart';
+import 'package:metabank/injection_container.dart';
 
 class ExpandedButton extends StatelessWidget {
   final String text;
@@ -13,6 +14,7 @@ class ExpandedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Row(
       children: [
         Expanded(
@@ -27,7 +29,7 @@ class ExpandedButton extends StatelessWidget {
             ),
             child: Text(
               text,
-              style: AppConfig.buttonWhiteTextStyle,
+              style: AppConfig.buttonWhiteTextStyle(),
             ),
           ),
         ),
